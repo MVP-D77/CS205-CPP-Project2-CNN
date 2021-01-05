@@ -230,6 +230,12 @@ void picture::FullyConnected(const fc_param &fc) {
     }
 }
 
-picture::~picture() {}
-picture::picture(const picture &pit) {}
-picture & picture::operator=(const picture &pit) {}
+picture::~picture() {
+    if(*(counter) == 1)  {
+        delete counter;
+        delete [] this->pixel ;
+    }else if(*(counter)==0){
+        delete counter;
+    }
+    else (*counter)--;
+}

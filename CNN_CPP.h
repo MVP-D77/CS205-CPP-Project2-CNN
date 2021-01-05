@@ -27,8 +27,6 @@ public:
     picture();
     explicit picture(Mat image);
     ~picture();
-    picture(const picture& pit) ;
-    picture& operator =(const picture & pit);
     float * getPixel() const{return pixel;}
     picture(int picture_size,int channels,float *pixel);
     int getPictureSize() const{return picture_size;}
